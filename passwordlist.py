@@ -22,6 +22,9 @@ def messages(message):
 	elif message.text == '/passlist':
 		m = bot.send_message(message.chat.id, 'Send Characters:len-of-password(integer)\n*Example:* `abcdDFFd%6:5`')
 		bot.register_next_step_handler(m, generate)
+	else:
+		bot.send_message(message.chat.id, 'Invalid command!\nSend */passlist* to make a password list')
+
 
 def generate(message):
 	num = random.randint(0, 1000)
@@ -60,8 +63,6 @@ def generate(message):
 	except:
 		bot.delete_message(message.chat.id, loading.message_id)
 		bot.send_message(message.chat.id, 'Password len must be integer!')
-
-
 
 
 bot.polling()
