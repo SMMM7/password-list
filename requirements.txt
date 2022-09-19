@@ -1,0 +1,6 @@
+pyTelegramBotAPI
+bs4
+requests
+pytube
+random
+itertools
